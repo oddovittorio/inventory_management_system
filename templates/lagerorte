@@ -3,6 +3,19 @@
 {% block title %}Lagerorte{% endblock %}
 
 {% block content %}
-    <h1>Lagerort-Übersicht</h1>
-    <p>Hier kannst du deine Lagerorte verwalten.</p>
+    <h1>Lagerorte</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Bezeichnung</th>
+            <th>Standort</th>
+        </tr>
+        {% for lagerort in lagerorte %}
+        <tr>
+            <td>{{ lagerort.lagerort_ID }}</td>
+            <td>{{ lagerort.lagerort_Bezeichnung }}</td>
+            <td>{{ lagerort.lagerort_Standort }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
