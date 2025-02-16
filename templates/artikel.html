@@ -4,5 +4,30 @@
 
 {% block content %}
     <h1>Artikelübersicht</h1>
-    <p>Hier werden alle Artikel angezeigt.</p>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nummer</th>
+            <th>Name</th>
+            <th>Beschreibung</th>
+            <th>Kategorie</th>
+            <th>Hersteller</th>
+            <th>Lieferant</th>
+            <th>Barcode</th>
+            <th>Preis</th>
+        </tr>
+        {% for artikel in artikel %}
+        <tr>
+            <td>{{ artikel.artikel_ID }}</td>
+            <td>{{ artikel.artikel_Nummer }}</td>
+            <td>{{ artikel.artikel_Name }}</td>
+            <td>{{ artikel.artikel_Beschreibung }}</td>
+            <td>{{ artikel.artikel_Kategorie }}</td>
+            <td>{{ artikel.artikel_Hersteller }}</td>
+            <td>{{ artikel.artikel_Lieferant }}</td>
+            <td>{{ artikel.artikel_Barcode }}</td>
+            <td>{{ artikel.artikel_Preis }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
